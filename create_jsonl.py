@@ -2,15 +2,13 @@ from LineObject import LineObject
 import argparse
 import sys
 
-def append_to_jsonl(jsonl, line):
-    jsonl.append(line)
-def get_jsonl(jsonl):
+def get_jsonl_from_list(jsonl,PEND,CEND):
     ans = ""
     for each in jsonl:
-        ans += each.__str__()
+        ans += '{' + f'"prompt": "{each.prompt}{PEND}", "completion": "{each.completion}{CEND}"' + '}\n'
     return '{\n' + ans + '}'
 
-def create():
+def prompt_create_list():
     jsonl = []
     while True:
         print('PROMPT: ', file=sys.stderr,end="")
@@ -20,8 +18,8 @@ def create():
         print('COMPLETION: ', file=sys.stderr, end="")
         c = input()
         o = LineObject(p,c)
-        append_to_jsonl(jsonl, o)
-    print(get_jsonl(jsonl))
+        jsonl.append(o)
+    return jsonl
 
 
 if __name__ == "__main__":
@@ -29,8 +27,10 @@ if __name__ == "__main__":
     parser.add_argument('-p', '--prompt-end',default= f'\n\n###\n\n')
     parser.add_argument('-c','--completion-end', default = '###')
     args = parser.parse_args()
-    LineObject.PEND = args.prompt_end
-    LineObject.CEND = args.completion_end
-    create()
+    PEND = args.prompt_end
+    CEND = args.completion_end
+    jsonl = prompt_create_list()
+    print(get_jsonl_from_list(jsonl, PEND,CEND))
+
 
     
