@@ -5,6 +5,8 @@ import sys
 def get_jsonl_from_list(jsonl,PEND,CEND):
     ans = ""
     for each in jsonl:
+        each.prompt = each.prompt.replace(PEND, '')
+        each.completion = each.completion.replace(CEND, '')
         ans += '{' + f'"prompt": "{each.prompt}{PEND}", "completion": "{each.completion}{CEND}"' + '}\n'
     return '{\n' + ans + '}'
 
