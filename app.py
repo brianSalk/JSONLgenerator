@@ -2,6 +2,8 @@ import streamlit as st
 import create_jsonl as cj
 from LineObject import LineObject
 def run_app():
+    def clear_jsonl():
+        st.session_state['l'] = l = []
     def clear_fields():
         st.session_state['comp'] = st.session_state['input_completion']
         st.session_state['input_completion'] = ""
@@ -12,19 +14,22 @@ def run_app():
     c1,c2 = st.columns([4,1],gap='large')
     if 'l' not in st.session_state:
         st.session_state['l'] = l
-    l = ['first']
     with c1:
         st.text_input('**PROMPT**',key='input_prompt')
         st.text_input('**COMPLETION**',key='input_completion')
         if st.button('append line',on_click=clear_fields):
             completion = st.session_state['comp']
             prompt = st.session_state['prompt']
-            st.session_state['l'].append(LineObject(prompt,completion))
+            if prompt == "" or completion == "":
+                st.markdown(':red[**please do not leave prompt/completion blank**]\n')
+            else:
+                st.session_state['l'].append(LineObject(prompt,completion))
 
 
     with c2:
         PEND = st.text_input('prompt end',value="",key='TI3')
         CEND = st.text_input('completion end',key='TI4')
+        st.button('clear JSONL', on_click=clear_jsonl)
 
     if not PEND:
         st.markdown(r':red[it is recommended that you use a prompt end such as \n\n###\n\n]')
