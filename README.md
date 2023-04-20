@@ -1,5 +1,6 @@
 # finetuneAI
-an easy way to create JSONL files for fine-tuning openai models.
+an easy way to create JSONL files for fine-tuning openai models.  
+Just type in your prompt, completion and specify prompt/completion seperators and this app will create a JSON file for you.  
 ## from the command line
 simply run `python create_jasonl.py -h` for instructions on how to get started and avaliable command line options.  
 Once you are ready to create your JSONL file, redirect the output to the file you want  
