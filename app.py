@@ -15,11 +15,9 @@ def run_app():
     if 'l' not in st.session_state:
         st.session_state['l'] = l
     with c1:
-        st.text_input('**PROMPT**',key='input_prompt')
-        st.text_input('**COMPLETION**',key='input_completion')
+        prompt  = st.text_input('**PROMPT**',key='input_prompt')
+        completion = st.text_input('**COMPLETION**',key='input_completion')
         if st.button('append line',on_click=clear_fields):
-            completion = st.session_state['comp']
-            prompt = st.session_state['prompt']
             if prompt == "" or completion == "":
                 st.markdown(':red[**please do not leave prompt/completion blank**]\n')
             else:
