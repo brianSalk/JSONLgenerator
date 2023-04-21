@@ -15,6 +15,7 @@ def run_app():
         st.markdown("### simply enter your prompt along with your desired completion into the fields to the right")
         st.markdown("### press the button to add the completion/prompt pair to the file and then click in the upper right corner of the text field below to append your prompt/completion pair to the JSONL file.")  
         st.markdown("### Optionally also add custom *prompt end* and *completion end* strings")
+        st.markdown("I am very greatful for **any and all** contributions.  contribute [here](https://github.com/brianSalk/finetuneAI)")
     def clear_fields():
         st.session_state['input_completion'] = ""
         st.session_state['input_prompt'] = ""
