@@ -36,7 +36,7 @@ def run_app():
                 value = "###")
         st.button('clear input', on_click=clear_fields)
         st.title("")
-        st.button("clear JSONL",on_click=clear_jsonl)
+        st.button("clear file",on_click=clear_jsonl)
     if not PEND:
         st.markdown(r':red[it is recommended that you use a prompt end such as \n\n###\n\n]')
     if not CEND:
