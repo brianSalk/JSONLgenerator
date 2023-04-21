@@ -10,6 +10,11 @@ OpenAI recommends ###"""
 def clear_jsonl():
     st.session_state['l'] = l = []
 def run_app():
+    with st.sidebar:
+        st.markdown("# Created by Brian Salkas")
+        st.markdown("### simply enter your prompt along with your desired completion into the fields to the right")
+        st.markdown("### press the button to add the completion/prompt pair to the file and then click in the upper right corner of the text field below to append your prompt/completion pair to the JSONL file.")  
+        st.markdown("### Optionally also add custom *prompt end* and *completion end* strings")
     def clear_fields():
         st.session_state['input_completion'] = ""
         st.session_state['input_prompt'] = ""
