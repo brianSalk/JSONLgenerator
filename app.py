@@ -15,7 +15,7 @@ def run_app():
     with c1:
         prompt = st.text_input('**PROMPT**',key='input_prompt')
         completion = st.text_input('**COMPLETION**',key='input_completion')
-        if st.button('append line'):
+        if st.button('add completion/prompt pair to JSON file'):
             if completion == "" or prompt == "":
                 st.markdown(':red[**Do not leave prompt or completion blank**]')
             else:
