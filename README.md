@@ -1,4 +1,4 @@
-# finetuneAI
+# JSONgenerator
 an easy way to create JSONL files for fine-tuning openai models.  
 Just type in your prompts, completions and specify prompt/completion seperators and this app will create a JSON file for you.  
 ## from the command line
