@@ -1,5 +1,6 @@
 import streamlit as st
 import create_jsonl as cj
+import fonts
 from LineObject import LineObject
 prompt_help = "An prompt to give to machine learning model"
 completion_help = "An ideal completion for the above prompt"
@@ -11,7 +12,7 @@ def clear_jsonl():
     st.session_state['l'] = l = []
 def run_app():
     with st.sidebar:
-        st.markdown("# Created by Brian Salkas")
+        st.markdown(fonts.tangerine("Created by Brian Salkas"),unsafe_allow_html=True )
         st.markdown("### simply enter your prompt along with your desired completion into the fields to the right")
         st.markdown("### press the button to add the completion/prompt pair to the file and then click in the upper right corner of the text field below to append your prompt/completion pair to the JSONL file.")  
         st.markdown("### Optionally also add custom *prompt end* and *completion end* strings")
