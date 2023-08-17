@@ -1,4 +1,5 @@
 [theme]
 base = "dark"
 backgroundColor = "#1e2124"
+font = "serif"
 
