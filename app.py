@@ -8,6 +8,8 @@ PEND_help = """a unique string that indicates the end of a prompt\n
 OpenAI recommends \\n\\n###\\n\\n"""
 CEND_help = """a unique string that indicates the end of a completion\n
 OpenAI recommends ###"""
+if 'clear_jsonl_btn' not in st.session_state:
+    st.session_state['clear_jsonl_btn'] = False
 def clear_jsonl():
     st.session_state['l'] = l = []
 def run_app():
@@ -47,7 +49,21 @@ def run_app():
                 value = "###")
         st.button('clear input', on_click=clear_fields)
         st.title("")
-        st.button("clear file",on_click=clear_jsonl)
+
+        # add session_state for button
+        clear_btn = st.button("clear file")
+        if clear_btn or st.session_state['clear_jsonl_btn']:
+            st.session_state['clear_jsonl_btn'] = True
+            confirm_btn = st.button("confirm")
+            cancel_btn = st.button("cancel")
+            if confirm_btn:
+                st.session_state['clear_jsonl_btn'] = False
+                clear_jsonl()
+                st.experimental_rerun()
+            if cancel_btn:
+                st.session_state['clear_jsonl_btn'] = False
+                st.experimental_rerun()
+
     if not PEND:
         st.markdown(r':red[it is recommended that you use a prompt end such as \n\n###\n\n]')
     if not CEND:
