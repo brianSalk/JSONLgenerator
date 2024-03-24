@@ -59,7 +59,7 @@ def run_app():
             if confirm_btn:
                 st.session_state['clear_jsonl_btn'] = False
                 clear_jsonl()
-                st.experimental_rerun()
+                st.rerun()
             if cancel_btn:
                 st.session_state['clear_jsonl_btn'] = False
                 st.experimental_rerun()
