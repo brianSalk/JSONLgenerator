@@ -50,19 +50,15 @@ def run_app():
         st.button('clear input', on_click=clear_fields)
         st.title("")
 
-        # add session_state for button
-        clear_btn = st.button("clear file")
-        if clear_btn or st.session_state['clear_jsonl_btn']:
+        if  st.button("clear file") or st.session_state['clear_jsonl_btn']:
             st.session_state['clear_jsonl_btn'] = True
-            confirm_btn = st.button("confirm")
-            cancel_btn = st.button("cancel")
-            if confirm_btn:
+            if st.button("confirm"):
                 st.session_state['clear_jsonl_btn'] = False
                 clear_jsonl()
                 st.rerun()
-            if cancel_btn:
+            if st.button("cancel"):
                 st.session_state['clear_jsonl_btn'] = False
-                st.experimental_rerun()
+                st.rerun()
 
     if not PEND:
         st.markdown(r':red[it is recommended that you use a prompt end such as \n\n###\n\n]')
