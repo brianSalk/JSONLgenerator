@@ -13,9 +13,13 @@ def clear_jsonl():
 def run_app():
     with st.sidebar:
         st.markdown(fonts.tangerine("Created by Brian Salkas"),unsafe_allow_html=True )
-        st.markdown("### simply enter your prompt along with your desired completion into the fields to the right")
-        st.markdown("### press the button to add the completion/prompt pair to the file and then click in the upper right corner of the text field below to append your prompt/completion pair to the JSONL file.")  
-        st.markdown("### Optionally also add custom *prompt end* and *completion end* strings")
+        st.markdown("# How to use:")
+        st.markdown("### **1)** Enter your desired **prompt** and **completion** into the text fields to the right")  
+        st.markdown("### **2)** Optionally adjust the prompt/completion end tokens")
+        st.markdown("### **3)** Click 'Append To JSONL File' to append the prompt and completion to the JSONL file")
+        st.markdown("### **4)** optionally click **clear input** to clear promt/completion or click **clear file** to start oveer")
+        st.markdown("### **5)** Repeat the above steps until you are done creating your JSONL file")
+        st.markdown("### **6)** Copy the file to your clipboard by clicking in the upper-right corner of the generated text.")
         st.markdown("I am very greatful for **any and all** contributions.  github page [here](https://github.com/brianSalk/finetuneAI)")
     def clear_fields():
         st.session_state['input_completion'] = ""
@@ -30,7 +34,7 @@ def run_app():
                 ,help = prompt_help)
         completion = st.text_input('**COMPLETION**',key='input_completion',
                 help = completion_help)
-        if st.button('add completion/prompt pair to JSON file'):
+        if st.button('Append To JSONL file'):
             if completion == "" or prompt == "":
                 st.markdown(':red[**Do not leave prompt or completion blank**]')
             else:
