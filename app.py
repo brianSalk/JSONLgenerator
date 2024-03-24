@@ -19,7 +19,7 @@ def run_app():
         st.markdown("### **1)** Enter your desired **prompt** and **completion** into the text fields to the right")  
         st.markdown("### **2)** Optionally adjust the prompt/completion end tokens")
         st.markdown("### **3)** Click 'Append To JSONL File' to append the prompt and completion to the JSONL file")
-        st.markdown("### **4)** optionally click **clear input** to clear promt/completion or click **clear file** to start oveer")
+        st.markdown("### **4)** optionally click **clear input** to clear promt/completion or click **clear file** to start over")
         st.markdown("### **5)** Repeat the above steps until you are done creating your JSONL file")
         st.markdown("### **6)** Copy the file to your clipboard by clicking in the upper-right corner of the generated text.")
         st.markdown("I am very greatful for **any and all** contributions.  github page [here](https://github.com/brianSalk/finetuneAI)")
