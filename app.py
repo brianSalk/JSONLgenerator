@@ -51,6 +51,7 @@ def run_app():
         st.title("")
 
         if  st.button("clear file") or st.session_state['clear_jsonl_btn']:
+            st.markdown(":red[Are you sure you want to start over?]")
             st.session_state['clear_jsonl_btn'] = True
             if st.button("confirm"):
                 st.session_state['clear_jsonl_btn'] = False
