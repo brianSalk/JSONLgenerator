@@ -55,10 +55,10 @@ def run_app():
             if st.button("confirm"):
                 st.session_state['clear_jsonl_btn'] = False
                 clear_jsonl()
-                st.rerun()
+                st.experimental_rerun()
             if st.button("cancel"):
                 st.session_state['clear_jsonl_btn'] = False
-                st.rerun()
+                st.experimental_rerun()
 
     if not PEND:
         st.markdown(r':red[it is recommended that you use a prompt end such as \n\n###\n\n]')
