@@ -9,6 +9,7 @@ python create_jsonl.py [options] > output.jsonl
 ```
 You can ignore the other files in this repo, they are either impelementation details or used for the webapp.  
 ## webapp
-visit the heroku hosted streamlit powered webapp here: https://fine-tune-openai.herokuapp.com/
+visit the heroku hosted streamlit powered webapp here: https://fine-tune-openai.herokuapp.com/  
+Or visit the [Streamlit powered app](https://jsonlgenerator.streamlit.app/)  
 ## Contribution
 Any and all contributions big and small are very appreciated.  This project is ideal for a python programmer looking to make a first pull-request (lot's of low-hanging fruit!)
