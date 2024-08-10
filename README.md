@@ -1,5 +1,5 @@
 # JSONLgenerator
-an easy way to create JSONL files for fine-tuning openai models. [Web app here](https://jsonlgenerator.streamlit.app/)
+an easy way to create JSONL files for fine-tuning openai models. [Web app here](https://jsonlgenerator.streamlit.app/)  
 Just type in your prompts, completions and specify prompt/completion seperators and this app will create a JSON file for you.  
 ## from the command line
 simply run `python create_jsonl.py -h` for instructions on how to get started and avaliable command line options.  
