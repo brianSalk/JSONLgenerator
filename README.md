@@ -1,6 +1,6 @@
 # JSONLgenerator
 an easy way to create JSONL files for fine-tuning openai models. [Web app here](https://jsonlgenerator.streamlit.app/)  
-If you want to fine tune GPT3.5 and newer models, I have an app for that [here](https://github.com/brianSalk/JSONLgenerator3.5)
+If you want to fine tune GPT3.5 and newer models, I have an app for that [here](https://github.com/brianSalk/JSONLgenerator3.5)  
 Just type in your prompts, completions and specify prompt/completion seperators and this app will create a JSON file for you.  
 ## from the command line
 simply run `python create_jsonl.py -h` for instructions on how to get started and avaliable command line options.  
