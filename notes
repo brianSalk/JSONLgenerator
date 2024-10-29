@@ -1,0 +1,5 @@
+each message array can hold at most one system, 0 or more user's and 0 or more assistants.
+outer braces
+	messages array
+		role: user/assistant/system, content: "user input"
+
